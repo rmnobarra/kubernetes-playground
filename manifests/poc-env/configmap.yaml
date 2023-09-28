@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: macacoenvs
+data:
+  DATABASE_USER: "macaconaousadiscord"
+  DATABASE_PASS: "macacobebetequil"
