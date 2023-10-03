@@ -1,0 +1,33 @@
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"networking.k8s.io/v1","kind":"Ingress","metadata":{"annotations":{},"name":"grafana-ingress","namespace":"monitoring"},"spec":{"ingressClassName":"nginx","rules":[{"host":"grafana.stackspotgrowth.sbox.zuplabs.com.br","http":{"paths":[{"backend":{"service":{"name":"grafana","port":{"number":3000}}},"path":"/","pathType":"Prefix"}]}}]}}
+  creationTimestamp: "2023-09-01T18:27:57Z"
+  generation: 1
+  name: grafana-ingress
+  namespace: monitoring
+  resourceVersion: "3431029"
+  uid: 1c843f17-c16e-4869-8683-73903001f5b1
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: grafana.stackspotgrowth.sbox.zuplabs.com.br
+    http:
+      paths:
+      - backend:
+          service:
+            name: grafana
+            port:
+              number: 3000
+        path: /
+        pathType: Prefix
+status:
+  loadBalancer:
+    ingress:
+    - hostname: aa5d8ca4bdff74f7e9de5cecb6e9b771-b421f41e1f719dfa.elb.us-east-1.amazonaws.com
